@@ -6,13 +6,14 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8F8EEADE-A21E-4E33-BEF4-7D7A502984A6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>DeteccaoRostoEmguCV</RootNamespace>
-    <AssemblyName>DeteccaoRostoEmguCV</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>StewartTableCV</RootNamespace>
+    <AssemblyName>StewartTableCV</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -57,16 +58,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmDeteccaoRosto.cs">
+    <Compile Include="FrmDetection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDeteccaoRosto.Designer.cs">
-      <DependentUpon>FrmDeteccaoRosto.cs</DependentUpon>
+    <Compile Include="FrmDetection.Designer.cs">
+      <DependentUpon>FrmDetection.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmDeteccaoRosto.resx">
-      <DependentUpon>FrmDeteccaoRosto.cs</DependentUpon>
+    <EmbeddedResource Include="FrmDetection.resx">
+      <DependentUpon>FrmDetection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,6 +77,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -4,30 +4,19 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace DeteccaoRostoEmguCV
+namespace StewartTableCV
 {
-    public partial class FrmDeteccaoRosto : Form
+    public partial class StewartTableCV : Form
     {
         static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
         VideoCapture capture;
         
-        public FrmDeteccaoRosto()
+        public StewartTableCV()
         {
             InitializeComponent();
         }
 
-        private void abrirImagemToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog() { Multiselect = false, Filter = "JPEG|*.jpg" })
-            {
-                if(ofd.ShowDialog() == DialogResult.OK)
-                {
-                    ProcessarImagem(new Bitmap(Image.FromFile(ofd.FileName)));
-                }
-            }
-        }
-
-        private void iniciarWebCamToolStripMenuItem_Click(object sender, EventArgs e)
+        private void IniciarWebCamToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(capture != null)
             {
@@ -54,7 +43,7 @@ namespace DeteccaoRostoEmguCV
             }
         }
 
-        private void pararWebCamToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PararWebCamToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (capture == null)
             {
@@ -81,6 +70,8 @@ namespace DeteccaoRostoEmguCV
                     using (Pen pen = new Pen(Color.Blue, 4))
                     {
                         graphics.DrawRectangle(pen, rectangle);
+                        var testeCoordenada = rectangle.Location;
+                        Console.WriteLine($"Coordenada X:{testeCoordenada.X}, Coordenada Y:{testeCoordenada.Y}, {DateTime.Now.ToString("hh: mm:ss.fff tt")}");
                     }
 
                 }
